@@ -1,35 +1,126 @@
+:root {
+  --bg-color: #0d0e15;
+  --text-color: #f1f1f1;
+
+  --gta-pink: #ff2a7a;
+  --gta-orange: #ff8a00;
+
+  --vice-city-gradient: linear-gradient(
+    45deg,
+    var(--gta-pink),
+    var(--gta-orange)
+  );
+}
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #222;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: -2px;
+
+  background: var(--vice-city-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-weight: 300;
+  color: #a0a0a0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 main {
-  margin-top: 60px; /* Adjust this value based on the height of your navigation bar */
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 0.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
 }
 
 p {
+  color: #a0a0a0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Skill Cards Styles */
+
+.skills_sec {
+  margin: 5rem 0;
+}
+
+.skills_sec h3 {
+  font-weight: 300;
+  color: #a0a0a0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.skills_sec ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.skills_sec li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  text-align: center;
+  padding: 4rem 1rem;
+
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  color: rgba(255, 255, 255, 0.3);
+
+  transition: all 0.4s ease;
+  cursor: default;
+}
+
+.skills_sec li i {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-a {
-  color: #007bff;
-  text-decoration: none;
+.skills_sec li:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 42, 122, 0.3);
+  transform: translateY(-8px);
+
+  box-shadow: 0 15px 30px -10px rgba(255, 42, 122, 0.2);
+
+  background-image: var(--vice-city-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
-a:hover {
-  text-decoration: underline;
-}
-
-
