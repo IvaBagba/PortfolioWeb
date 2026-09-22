@@ -1,21 +1,56 @@
-.mainNav {
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
+header {
+  position: sticky;
   top: 0;
-  width: 100%;
+
+  background-color: rgba(13, 14, 21, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+}
+
+.mainNav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1.5rem;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .mainNav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
+  color: var(--text-color);
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+
+  transition: color 0.3s ease;
 }
 
 .mainNav a:hover {
-  background-color: #ddd;
-  color: black;
+  color: var(--gta-pink);
+}
+
+.mainNav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+
+  background-color: #ff8a00;
+  background-image: var(--vice-city-gradient);
+  transition: width 0.3s ease;
+}
+
+.mainNav a:hover::after {
+  width: 100%;
 }
